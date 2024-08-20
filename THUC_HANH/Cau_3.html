@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let count = 0;
+    let n = +prompt("Enter the number of element in the array: ");
+    while (n > 50) {
+        n = +prompt("n is less than or equal 50 !");
+    }
+    let k = +prompt("Enter k: ")
+    while (k <= 0) {
+        k = +prompt("K is a positive: ")
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Enter value: ");
+    }
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if ((arr[i] + arr[j]) % k === 0) {
+                count ++;
+            }
+        }
+    }
+    alert("The number of pair: " + count);
+</script>
+</body>
+</html>

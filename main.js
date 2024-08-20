@@ -248,7 +248,6 @@ class Shop {
     }
 
     buyNow(i) {
-        console.log('Buy Now clicked for product:', this.shops[i].name);
         this.infoProduct.push(this.shops[i])
         if (this.shopCart[this.shops[i].name]) {
             this.shopCart[this.shops[i].name].quantity++;
@@ -314,6 +313,13 @@ function payBill() {
     } else {
         alert("There are no orders to pay yet!");
     }
-
-
 }
+
+document.getElementById('showButton').addEventListener('click', function() {
+    let whiteArea = document.getElementById('cart');
+    if (whiteArea.style.display === "none") {
+        whiteArea.style.display = "block";
+    } else {
+        whiteArea.style.display = "none";
+    }
+});

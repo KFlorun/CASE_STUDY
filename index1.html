@@ -67,7 +67,7 @@
         <div class="carousel-inner">
             <div class="carousel-item active c-item">
                 <img src="https://s.net.vn/Jy7k"
-                       class="d-block w-100 c-img" alt="Slide 1">
+                     class="d-block w-100 c-img" alt="Slide 1">
                 <div class="carousel-caption top-0 mt-4">
                     <p class="mt-5 fs-3 text-uppercase">Discover the hidden world</p>
                     <h1 class="display-1 fw-bolder text-capitalize">The Sapa Tours</h1>
@@ -115,17 +115,17 @@
 <div class="services">
     <h1 class="our-services">OUR SERVICES</h1>
     <div class="box-container1">
-        <div class="box"><img src="../Image/hiking.png" height="150" width="150" alt="Adventure"/>
+        <div class="box"><img src="Image/hiking.png" height="150" width="150" alt="Adventure"/>
             <h3>Adventure</h3></div>
-        <div class="box"><img src="../Image/bag.png" height="150" width="150" alt="Trekking"/>
+        <div class="box"><img src="Image/bag.png" height="150" width="150" alt="Trekking"/>
             <h3>Trekking</h3></div>
-        <div class="box"><img src="../Image/tent.png" height="150" width="150" alt="Camping"/>
+        <div class="box"><img src="Image/tent.png" height="150" width="150" alt="Camping"/>
             <h3>Camping</h3></div>
     </div>
     <div class="box-container2">
-        <div class="box"><img src="../Image/tour-guide.png" height="150" width="150" alt="Travel"/>
+        <div class="box"><img src="Image/tour-guide.png" height="150" width="150" alt="Travel"/>
             <h3>Travel</h3></div>
-        <div class="box"><img src="../Image/volunteer.png" height="150" width="150" alt="Volunteer"/>
+        <div class="box"><img src="Image/volunteer.png" height="150" width="150" alt="Volunteer"/>
             <h3>Volunteer</h3></div>
     </div>
 </div>
@@ -144,7 +144,7 @@
 </div>
 
 <div class="about" id="about">
-    <div class="image1"><img src="../Image/Tak_Po_2.jpg" alt="About Us"/></div>
+    <div class="image1"><img src="Image/Tak_Po_2.jpg" alt="About Us"/></div>
     <div class="box-container5">
         <div class="content1">
             <h3>Why choose us?</h3>
@@ -227,49 +227,69 @@
         <div class="credit"> Created by <span>Khoa</span> | all rights reserved!</div>
     </div>
 </div>
+<!-- Button trigger modal -->
+<button type="button" id='showButton' class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal">
+    Show White Area
+</button>
 
-<div id="cart" class="cart-hidden">
-    <div class="container my-4">
-        <h2 class="mb-4">Your Tour</h2>
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover text-center">
-                <thead class="table-success">
-                <tr>
-                    <th>Name</th>
-                    <th>Phone number</th>
-                    <th>Number of guests</th>
-                    <th>Where to</th>
-                    <th>Arrivals</th>
-                    <th>Leaving</th>
-                    <th>Your Address</th>
-                    <th>Contact through</th>
-                    <th colspan="3">Total Price: <span id="total-price-tour">0</span>   VND</th>
-                </tr>
-                </thead>
-                <tbody id="tourList">
-                </tbody>
-            </table>
+<!-- Modal -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Your Cart</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Nội dung khu vực màu trắng -->
+                <div class="container my-4">
+                    <h2 class="mb-4">Your Tour</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover text-center">
+                            <thead class="table-success">
+                            <tr>
+                                <th>Name</th>
+                                <th>Phone number</th>
+                                <th>Number of guests</th>
+                                <th>Where to</th>
+                                <th>Arrivals</th>
+                                <th>Leaving</th>
+                                <th>Your Address</th>
+                                <th>Contact through</th>
+                                <th colspan="3">Total Price: <span id="total-price-tour">0</span> VND</th>
+                            </tr>
+                            </thead>
+                            <tbody id="tourList">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="container my-4">
+                    <h2 class="mb-4">Your Cart</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered table-hover text-center">
+                            <thead class="table-success">
+                            <tr>
+                                <th>Name</th>
+                                <th>Price (VND)</th>
+                                <th>Color</th>
+                                <th colspan="3">Total Price: <span id="total-price-cart">0</span> VND</th>
+                            </tr>
+                            </thead>
+                            <tbody id="cartList">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" onclick="submit()" class="btn btn-primary">Save changes</button>
+            </div>
         </div>
-    </div>
-    <div class="container my-4">
-        <h2 class="mb-4">Your Cart</h2>
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover text-center">
-                <thead class="table-success">
-                <tr>
-                    <th>Name</th>
-                    <th>Price (VND)</th>
-                    <th>Color</th>
-                    <th colspan="3">Total Price:  <span id="total-price-cart">0</span>   VND</th>
-                </tr>
-                </thead>
-                <tbody id="cartList">
-                </tbody>
-            </table>
-        </div>
-        <button onclick="submit()" id="" class="btn btn-outline-success">Submit</button>
     </div>
 </div>
+
 
 </body>
 </html>
